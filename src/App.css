@@ -1,38 +1,380 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  margin-top: 0;
+  font-size: 22px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.large {
+  border: 4px solid gold;
+}
+
+.menu {
+  display: flex; /* This makes the items horizontal */
+  justify-content: space-between;
+  /* makes first and last item at the edge, spaces items in between evenly */
+  align-items: center;
+  padding: 15px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex; /* horizontal link items*/
+  gap: 65px; /* Space between menu items*/
+  margin: 0;
+}
+
+.menu-links li {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333; /* Text color */
+}
+
+.menu-links li:hover {
+  color: #6fc3ea; /* Hover effect */
+}
+
+.search-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.intro {
+  padding: 50px 80px;
+  border-bottom: 1px solid #ddd;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 50px;
+  gap: 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  /* how to make it stay in the middle? */
+  width: 1px;
+  background-color: #ddd;
+  /*align-self: center; */
+  align-items: center;
+  height: auto;
+}
+
+.home-text1 {
+  flex: 1;
+  line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.home-section3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-around; /* Distribute options evenly */
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 20px; /* Space between options and content */
+}
+
+.option-content {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.options-col {
+  /*TODO: make option col stick to the left*/
+  display: grid;
+  justify-content: space-around; /* Distribute options evenly */
+  gap: 40px;
+  padding: 10px 20px;
+  margin-bottom: 20px; /* Space between options and content */
+}
+
+.content-boxes {
+  display: flex;
+}
+
+.static-content,
+.dynamic-content {
+  background-color: #ccc;
+  padding: 50px;
+  min-width: 250px;
+  text-align: center;
+  flex: 1;
+}
+
+.content-connector {
+  width: 150px;
+  background-color: #ccc;
+  height: 1px;
+  align-self: center;
+}
+
+.home-section4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 50px;
+}
+
+.home-section4-text {
+  justify-content: center;
+  text-align: left;
+  max-width: 200px;
+  padding: 20px;
+}
+
+.underline-p {
+  text-decoration: underline;
+}
+
+.home-section4-social {
+  justify-content: center;
+}
+
+.home-section4-divider {
+  width: 1px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.products-section1 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-box {
+  width: 150px;
+  height: 150px;
+  background-color: #1f1e1e;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.product-section2 {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-image {
+  width: 300px;
+  height: 300px;
+  background-color: #00aaff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 8px;
+}
+
+.product-sec2-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-section3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.product-sec3-txt h2,
+.product-sec3-social h2 {
+  margin-bottom: 10px;
+}
+
+.product-sec3-txt ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-sec3-txt li {
+  margin: 5px 0;
+  justify-content: center;
+}
+
+.product-sec3-divider {
+  width: 1px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+.support-sec1 {
+  padding: 70px;
+  border-bottom: 1px solid #ddd;
+}
+
+.support-sec1 h1 {
+  text-align: center;
+}
+
+.supp-sec1-item {
+  border: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+.supp-sec1-header {
+  padding: 10px;
+  background-color: #ccc;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.supp-sec1-txt {
+  padding: 10px;
+  background-color: #eee;
+}
+
+.supp-section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 50px;
+}
+
+.supp-sec2-txt {
+  flex: 1;
+  justify-content: center;
+  max-width: 200px;
+  padding: 20px;
+}
+
+.supp-sec2-social {
+  flex: 1;
+  justify-content: center;
+}
+
+.supp-sec2-divider {
+  width: 1px;
+  height: auto;
+  background-color: #ccc;
+}
+
+.con-sec1 {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  grid-column: span 2;
+}
+
+.captcha {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(37, 179, 255);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.google-map {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(8, 148, 212);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

@@ -10,6 +10,7 @@ function Menu() {
   /* TODO: Add slide bar effect later */
   return (
     <nav className="menu">
+      <Link to="/register">
       <img
         className="avatar"
         src={user.imageUrl}
@@ -18,6 +19,7 @@ function Menu() {
           height: user.imageSize,
         }}
       />
+      </Link>
       <ul className="menu-links">
         <Link to="/">Home</Link>
         <Link to="/product">Product</Link>
@@ -90,7 +92,7 @@ function HomeSection3() {
 
 function HomeSection4() {
   return (
-    <div className="home-section4">
+    <><div className="home-section4">
       <div className="home-section4-text">
         <h2>丁辉人</h2>
         <div className="underline-p">
@@ -115,7 +117,7 @@ function HomeSection4() {
           </span>
         </div>
       </div>
-    </div>
+    </div><iframe style={{"border-radius":12}} src="https://open.spotify.com/embed/track/6jXJlfZ3O43XYbiIJIpVB4?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></>
   );
 }
 

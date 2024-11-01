@@ -30,6 +30,9 @@ import HomePage from "./HomePage";
 import SupportPage from "./SupportPage";
 import ContactPage from "./ContactPage";
 import "./App.css";
+import RegisterPage from "./RegisterPage";
+import LoginPage from "./LoginPage";
+import UserPage from "./UserPage";
 
 export default function App() {
   return (
@@ -39,6 +42,9 @@ export default function App() {
         <Route path="/product" element={<ProductPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/user" element={<UserPage />} />
       </Routes>
     </div>
   );

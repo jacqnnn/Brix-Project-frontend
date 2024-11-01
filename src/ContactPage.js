@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React, { useEffect, useRef, useState } from 'react';
 
 const user = {
   imageUrl:
@@ -10,6 +11,7 @@ function Menu() {
   /* TODO: Add slide bar effect later */
   return (
     <nav className="menu">
+      <Link to="/register">
       <img
         className="avatar"
         src={user.imageUrl}
@@ -18,6 +20,7 @@ function Menu() {
           height: user.imageSize,
         }}
       />
+      </Link>
       <ul className="menu-links">
         <Link to="/">Home</Link>
         <Link to="/product">Product</Link>
@@ -29,23 +32,51 @@ function Menu() {
   );
 }
 
-// function ContactSec1() {
+function ContactSec1() {
     //reder without return: const ContactSec1 = () => () 
     // equals const ContactSec1 = () => { return ...}
     // only works in one wrapper
-const ContactSec1 = () => (
+  const recaptchaRef = useRef(null);
+  const [recaptchaId, setRecaptchaId] = useState(null);
+
+  useEffect(() => {
+    window.onloadCallback = function () {
+      if (window.grecaptcha && recaptchaRef.current && !recaptchaId) {
+        // render only if not already rendered
+        const widgetId = window.grecaptcha.render(recaptchaRef.current, {
+          sitekey: process.env.REACT_APP_GOOGLE_RECAPTCHA_KEY, 
+          //am i supposed to put site key directly in here? 
+          //i tried to set an env variable but it didnt work
+          theme: "light",
+        });
+        setRecaptchaId(widgetId);
+      }
+    };
+
+    // DO NOT RENDER MULTIPLE TIMES
+    if (!document.querySelector('script[src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"]')) {
+      const recaptchaScript = document.createElement("script");
+      recaptchaScript.src = "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit";
+      recaptchaScript.async = true;
+      recaptchaScript.defer = true;
+      document.body.appendChild(recaptchaScript);
+    }
+
+    return () => {
+      setRecaptchaId(null);
+    };
+  }, [recaptchaId]);
+    
+  return(
     <div className="con-sec1">
     <h1>Title</h1>
-    {/* why is it not working? */}
     <form className="contact-form">
         <input type="text" placeholder="Name" required />
         <input type="email" placeholder="Email (required)" required />
         <input type="tel" placeholder="Phone" />
         <textarea placeholder="Text" required></textarea>
-        <div className="captcha">
+        <div className="captcha" ref={recaptchaRef}>
             {/* google captcha api: https://developers.google.com/recaptcha*/}
-            <input type="checkbox" required />
-            <label>I'm not a robot</label>
         </div>
         <button type="submit">Submit</button>
     </form>
@@ -53,8 +84,8 @@ const ContactSec1 = () => (
     {/* <button className="google-map">Google map</button> */}
     
     </div>
-)
-// }
+  );
+}
 
 function ContactSec2() {
     return (

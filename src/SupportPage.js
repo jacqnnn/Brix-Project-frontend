@@ -11,6 +11,7 @@ function Menu() {
   /* TODO: Add slide bar effect later */
   return (
     <nav className="menu">
+      <Link to="/register">
       <img
         className="avatar"
         src={user.imageUrl}
@@ -19,6 +20,7 @@ function Menu() {
           height: user.imageSize,
         }}
       />
+      </Link>
       <ul className="menu-links">
         <Link to="/">Home</Link>
         <Link to="/product">Product</Link>
@@ -40,7 +42,12 @@ function SupportSection1() {
         setOpenIndex(index);
       }
     };
-    const questions = ['Question 1', 'Question 2', 'Question 3', 'Question 4']
+    const questions = [
+      { question: 'Question 1', answer: "text1" },
+      { question: 'Question 2', answer: "text2" },
+      { question: 'Question 3', answer: "text3" },
+      { question: 'Question 4', answer: "text4" },
+      ]
     // object for every elt. e.g: {question: 'Question1', answer: 'text1'}
     //need to check data structure. need to deconstruct object
     return (
@@ -48,13 +55,13 @@ function SupportSection1() {
         <div className="support-sec1">
             <h1>Title</h1>
             
-            {questions.map((question, index) => (
+            {questions.map((item, index) => (
                 <div key={index} className="supp-sec1-item">
                     <div className="supp-sec1-header" onClick={() => toggle(index)}>
-                        {question}
+                        {item.question}
                         <span>{openIndex === index ? '▼' : '▶'}</span>
                     </div>
-                    {openIndex === index && <div className="supp-sec1-txt">Text</div>}
+                    {openIndex === index && <div className="supp-sec1-txt">{item.answer}</div>}
                 </div>
             ))}
         </div>

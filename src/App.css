@@ -378,3 +378,140 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.register-sec1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 2rem auto;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.reg-section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 50px;
+}
+
+.reg-sec2-txt {
+  flex: 1;
+  justify-content: center;
+  max-width: 200px;
+  padding: 20px;
+}
+
+.reg-sec2-social {
+  flex: 1;
+  justify-content: center;
+}
+
+.reg-sec2-divider {
+  width: 1px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 2rem auto;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.login input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.user-sec1 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1px;
+}
+
+.product-item {
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: transparent !important;
+  transition: transform 0.2s;
+  max-width: 150px;
+  flex: 1 1 150px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background-color: transparent !important;
+}
+
+.product-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.pages span {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pages span:hover {
+  color: white;
+}

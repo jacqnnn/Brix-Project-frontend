@@ -10,6 +10,7 @@ function Menu() {
   /* TODO: Add slide bar effect later */
   return (
     <nav className="menu">
+      <Link to="/register">
       <img
         className="avatar"
         src={user.imageUrl}
@@ -18,6 +19,7 @@ function Menu() {
           height: user.imageSize,
         }}
       />
+      </Link>
       <ul className="menu-links">
         <Link to="/">Home</Link>
         <Link to="/product">Product</Link>
